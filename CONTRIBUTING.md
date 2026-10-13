@@ -19,17 +19,20 @@ Signed-off-by: Your Name <you@example.com>
 
 ## Changing the page
 
+- Everything in `public/` is served at qr.honestrobin.com, and nothing outside it is.
+
+
 - The page is `tools/page.html`, and its words are in `words/<language>.json`. After changing
-  either, run `python3 tools/pages.py`. Never edit `index.html` or `<language>/index.html` by
-  hand: they're written from those two.
+  either, run `python3 tools/pages.py`. Never edit the pages in `public/` by hand: they're
+  written from those two.
 - A new or changed English line needs every language. If you can't translate it, say so in the
   pull request, and we will.
 - What's typed never leaves the page: no request may carry it, and it's never put in the address
-  or in storage. Read [`PROMISES.md`](PROMISES.md) before you change `assets/qr.js`, `_headers`
-  or `worker/`.
+  or in storage. Read [`PROMISES.md`](PROMISES.md) before you change `public/assets/qr.js`,
+  `public/_headers` or `worker/`.
 - Never change what someone typed. Suggest a fix, and only their tap applies it.
-- A library is copied into `assets/vendor/` as it was published, with its licence, and listed in
-  `assets/vendor/README.md`. The page loads nothing from anywhere else.
+- A library is copied into `public/assets/vendor/` as it was published, with its licence, and
+  listed in `public/assets/vendor/README.md`. The page loads nothing from anywhere else.
 
 ## Before you open a pull request
 

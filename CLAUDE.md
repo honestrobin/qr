@@ -5,10 +5,11 @@ are in `robinscode`; this adds what's particular to QR.
 
 - **What's typed never leaves the page.** No request may carry it, and it's never put in the
   address or in storage. `tests/privacy.spec.js` checks it; read `PROMISES.md` before touching
-  `assets/qr.js` or `_headers`, or switching Cloudflare's counter for something else.
+  `public/assets/qr.js` or `public/_headers`, or switching Cloudflare's counter for something else.
 - **Never change what someone typed.** Suggest the fix; only their tap applies it.
 - **Words live in `words/<language>.json`.** Edit `tools/page.html` and the words, then run
-  `python3 tools/pages.py`; never edit `index.html` or `<language>/index.html` by hand. A new or
+  `python3 tools/pages.py`; never edit the pages in `public/` by hand. Everything in `public/` is served, so nothing else goes
+  there. A new or
   changed English string needs every language, translated and checked back.
 - **QR's words may play more than a work tool's.** People use it for a minute, and it isn't
   serious work, so the robin may lighten the moment more than it would in Time. Each line still

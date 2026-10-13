@@ -1,6 +1,6 @@
 # Deploys QR to Cloudflare Workers, at qr.honestrobin.com: `wrangler deploy`, the version
-# tests/package-lock.json pins (the one the checks used), with a Cloudflare API token from the
-# repository's secrets.
+# tests/package-lock.json pins (the one the checks used), with a Cloudflare API token from GitHub's
+# secrets (set for the organisation, which public repositories can use).
 #   CLOUDFLARE_API_TOKEN   (from Cloudflare's "Edit Cloudflare Workers" token template)
 #   CLOUDFLARE_ACCOUNT_ID
 # It runs the checks first (checks.yml) and deploys only if they pass. Pull requests never run it.

@@ -26,7 +26,7 @@ in [`PROMISES.md`](PROMISES.md). It follows the [Robin's Code](https://honestrob
 |---|---|---|
 | Cloudflare | United States | Serves the page and runs its one piece of server code. Counts visits with its cookie-free Web Analytics: the counter records the page's address, the site a visit came from, the country, browser, system, device type and load times. It runs inside the page and sends nothing you type. Keeps the counts of what's done on the page (below) for three months, in its own store (Workers Analytics Engine), with nothing of yours: not your address, not your browser. We use Cloudflare because it already serves honestrobin.com and serves static pages well at no cost; we'll move to a European host that serves you as well. |
 
-Nobody else. The page's security policy (`_headers`) lets it talk to nothing but its own address
+Nobody else. The page's security policy (`public/_headers`) lets it talk to nothing but its own address
 and Cloudflare's counter. Our server code sends nothing anywhere. A copy of QR anywhere else sends us nothing: Cloudflare adds the
 visit counter only at qr.honestrobin.com, and a copy's server code keeps its counts in the store
 of whoever deploys it.
@@ -64,13 +64,14 @@ piece of server code that stores the counts.
 |---|---|
 | `tools/page.html` | The page, with a `{{key}}` for every word |
 | `words/<language>.json` | The words, one file per language, with the same keys as `en.json` |
-| `tools/pages.py` | Writes `index.html` (English), `<language>/index.html`, `sitemap.xml` and `robots.txt` from the two above, and stamps each stylesheet and script link (in `404.html` too) with its version. Run it after changing either; CI fails if a page is out of date |
-| `assets/qr.js` | Makes the code, checks it, and hands it over |
-| `assets/language.js` | Picks the language: what you picked, else your browser's list, never your IP address |
-| `assets/qr.css` | The look: a mat of small squares, a sticker, and a field drawn like the robin |
-| `assets/vendor/` | The QR encoder and the reader for the check, copied in (`assets/vendor/README.md`) |
-| `assets/fonts/` | Archivo, under the SIL Open Font License |
-| `_headers`, `wrangler.jsonc` | How Cloudflare serves it |
+| `tools/pages.py` | Writes `public/index.html` (English), `public/<language>/index.html`, `sitemap.xml` and `robots.txt` from the two above, and stamps each stylesheet and script link (in `404.html` too) with its version. Run it after changing either; CI fails if a page is out of date |
+| `public/` | Everything that's served, and nothing else: the pages, `404.html`, `_headers`, the icons and `assets/` |
+| `public/assets/qr.js` | Makes the code, checks it, and hands it over |
+| `public/assets/language.js` | Picks the language: what you picked, else your browser's list, never your IP address |
+| `public/assets/qr.css` | The look: a mat of small squares, a sticker, and a field drawn like the robin |
+| `public/assets/vendor/` | The QR encoder and the reader for the check, copied in (`public/assets/vendor/README.md`) |
+| `public/assets/fonts/` | Archivo, under the SIL Open Font License |
+| `public/_headers`, `wrangler.jsonc` | How Cloudflare serves it |
 | `worker/index.js`, `worker/counts.js` | The one piece of server code: it stores the page's counts, as listed above, in Cloudflare's store, and does nothing else |
 | `tests/` | The checks every change runs before it merges and before it goes live |
 | `docs/releases/` | The record of each release |
@@ -107,10 +108,11 @@ npm run html && npx playwright test
 
 ## Deploy
 
-`.github/workflows/deploy.yml` runs the checks, then `wrangler deploy`, which uploads this folder,
-minus `.assetsignore`, to Cloudflare Workers at qr.honestrobin.com. For now it runs only when
-started by hand (Actions → Deploy → Run workflow). The Cloudflare token lives in the repository's
-secrets, never in its files.
+`.github/workflows/deploy.yml` runs the checks, then `wrangler deploy`, which uploads `public/`
+(minus the one file in `public/.assetsignore`) and the server code to Cloudflare Workers at
+qr.honestrobin.com. For now it runs only when
+started by hand (Actions → Deploy → Run workflow). The Cloudflare token lives in GitHub's secrets,
+never in the files.
 
 Visits are counted by Cloudflare Web Analytics: its automatic setup for honestrobin.com adds the
 cookie-free counter to every page at Cloudflare's edge, so QR's own files have none, and a copy of
@@ -119,8 +121,8 @@ hostname qr.honestrobin.com. The tests add the same tag to check what it sends.
 
 ## Run your own copy
 
-The page is plain files. Serve this folder from the root of an address, with any web server, and
-it works the same; without `worker/`, its counts go nowhere. `_headers` is Cloudflare's format, so
+The page is plain files. Serve `public/` from the root of an address, with any web server, and
+it works the same; without `worker/`, its counts go nowhere. `public/_headers` is Cloudflare's format, so
 on another server, set the same headers yourself. To run it on your own Cloudflare account, put
 your address in `wrangler.jsonc` and run `npx wrangler deploy`.
 
@@ -132,6 +134,6 @@ security problem privately, as [SECURITY.md](SECURITY.md) says.
 ## Licence
 
 The code is under the [GNU AGPL v3](LICENSE), with no contributor licence agreement. The libraries
-in `assets/vendor/` keep their own licences ([`assets/vendor/README.md`](assets/vendor/README.md)),
+in `public/assets/vendor/` keep their own licences ([`public/assets/vendor/README.md`](public/assets/vendor/README.md)),
 and the font is under the SIL Open Font License. The name and the robin aren't part of the
 licence: [TRADEMARKS.md](TRADEMARKS.md) says what's fine.

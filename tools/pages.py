@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Writes QR's page in every language from tools/page.html and words/<language>.json.
+"""Writes QR's page in every language, into public/, from tools/page.html and words/<language>.json.
 
 English is at /, every other language at /<code>/ (Deutsch at /de/), so people searching in their
 own language find it. It also writes sitemap.xml, the list of those pages for search engines, and
@@ -21,6 +21,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+PUBLIC = ROOT / "public"  # everything served, and nothing else
+
 SITE = "https://qr.honestrobin.com"
 
 # The order of the language picker, and of the links search engines read.
@@ -139,7 +141,7 @@ def versioned(text):
     """Each stylesheet and script is asked for by its own version (a hash of the file), so a page
     never meets the stylesheet or script of another release while Cloudflare's cache catches up."""
     def stamp(match):
-        digest = hashlib.sha256((ROOT / match.group(2).lstrip("/")).read_bytes()).hexdigest()[:10]
+        digest = hashlib.sha256((PUBLIC / match.group(2).lstrip("/")).read_bytes()).hexdigest()[:10]
         return f'{match.group(1)}?v={digest}"'
     return ASSET.sub(stamp, text)
 
@@ -154,7 +156,7 @@ def outputs():
     for code in LANGUAGES:
         target = "index.html" if code == "en" else f"{code}/index.html"
         files[target] = page(template, code, words)
-    files["404.html"] = versioned((ROOT / "404.html").read_text(encoding="utf-8"))
+    files["404.html"] = versioned((PUBLIC / "404.html").read_text(encoding="utf-8"))
     files["sitemap.xml"] = sitemap()
     files["robots.txt"] = f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n"
     return files, []
@@ -175,14 +177,14 @@ def main():
         print("The words files don't match English:", *problems, sep="\n  ")
         return 1
     if "--check" in sys.argv:
-        stale = [name for name, text in files.items() if not (ROOT / name).exists() or (ROOT / name).read_text(encoding="utf-8") != text]
+        stale = [name for name, text in files.items() if not (PUBLIC / name).exists() or (PUBLIC / name).read_text(encoding="utf-8") != text]
         if stale:
             print("Out of date, run python3 tools/pages.py:", *stale, sep="\n  ")
             return 1
         return 0
     for name, text in files.items():
-        (ROOT / name).parent.mkdir(parents=True, exist_ok=True)
-        (ROOT / name).write_text(text, encoding="utf-8")
+        (PUBLIC / name).parent.mkdir(parents=True, exist_ok=True)
+        (PUBLIC / name).write_text(text, encoding="utf-8")
     return 0
 
 

@@ -13,7 +13,7 @@ const pages = [
 ];
 // The security policy, exactly as _headers sets it: a new address in it fails here until this
 // test and the ledger's list of companies change with it.
-const POLICY = readFileSync(new URL("../_headers", import.meta.url), "utf8")
+const POLICY = readFileSync(new URL("../public/_headers", import.meta.url), "utf8")
   .split("\n")
   .find((line) => line.trim().startsWith("Content-Security-Policy:"))
   .split("Content-Security-Policy:")[1]
@@ -187,7 +187,8 @@ test.describe("the whole tool", () => {
 
   test("files that aren't part of the tool aren't served", async ({ request }) => {
     const notServed = [
-      "/README.md",
+            "/README.md",
+      "/CONTRIBUTING.md",
       "/PROMISES.md",
       "/CHANGELOG.md",
       "/CLAUDE.md",
@@ -202,7 +203,8 @@ test.describe("the whole tool", () => {
       "/docs/releases/1.0.0.md",
       "/tests/package.json",
       "/tests/playwright.config.js",
-      "/assets/vendor/README.md",
+            "/assets/vendor/README.md",
+      "/public/index.html",
     ];
     const served = [];
     for (const path of notServed) {
