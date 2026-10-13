@@ -1,0 +1,18 @@
+{
+  "name": "honestrobin-qr-checks",
+  "private": true,
+  "type": "module",
+  "description": "The checks every change to QR runs before it merges and before it goes live. The page itself has no dependencies; only these checks do.",
+  "scripts": {
+    "html": "html-validate --config htmlvalidate.json ../index.html ../404.html ../*/index.html",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.63.0",
+    "html-validate": "11.16.2",
+    "jsqr": "1.4.0",
+    "pngjs": "7.0.0",
+    "wrangler": "4.147.0"
+  }
+}

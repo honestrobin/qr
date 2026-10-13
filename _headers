@@ -1,0 +1,15 @@
+# Cloudflare (Workers static assets) reads this file. The page loads everything from here, and the
+# only other place it may talk to is Cloudflare's cookie-free visit counter, which counts page
+# views and never sees what's typed (tests/privacy.spec.js). Pictures people choose are read in the
+# browser (data: and blob: addresses), never uploaded.
+/*
+  Content-Security-Policy: default-src 'none'; script-src 'self' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  # Other sites see only that a visit came from qr.honestrobin.com. The page's address never holds
+  # what's typed.
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

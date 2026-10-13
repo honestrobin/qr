@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="{{lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}" />
+    <meta name="theme-color" content="#eaf1ec" />
+    <link rel="canonical" href="{{url}}" />
+{{alternates}}
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" href="/assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/assets/fonts/archivo-latin-ext-wdth-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/assets/qr.css" />
+    <script type="application/json" id="languages">{{languagesData}}</script>
+    <script src="/assets/language.js"></script>
+    <script src="/assets/vendor/qrcode.js" defer></script>
+    <script src="/assets/vendor/jsQR.js" defer></script>
+    <script src="/assets/qr.js" defer></script>
+    <script type="application/json" id="words">{{words}}</script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="masthead">
+        <span class="brand">Honest Robin <span class="badge">QR</span></span>
+        <div class="picker">
+          <button type="button" class="tongue" id="language" aria-expanded="false" aria-controls="language-list">
+            <span class="sr">{{languageLabel}}: </span><span>{{language}}</span>
+            <svg class="chevron" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M1.5 1.5 6 6l4.5-4.5" /></svg>
+            <svg class="tail" viewBox="0 0 18 15" aria-hidden="true"><path class="tail-fill" d="M1 0 L4 14 L15 0 Z" /><path class="tail-line" d="M1.5 0 L4 13.5 L14.5 0" /></svg>
+          </button>
+          <ul class="language-list" id="language-list" hidden>
+{{languages}}
+          </ul>
+        </div>
+      </header>
+
+      <main class="desk">
+        <section class="make" aria-labelledby="headline">
+          <h1 id="headline">{{headline}}</h1>
+          <p class="lede">{{lede}}</p>
+
+          <div class="verdict">
+            <button type="button" class="robin" id="robin" aria-label="{{talkToRobin}}" aria-controls="bubble" aria-expanded="true"><img src="/assets/img/robin-qr.svg" alt="" width="400" height="440" /></button>
+            <div class="verdict-words">
+              <p class="bubble say" id="bubble">{{robinHello}}</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="ground" aria-hidden="true"></span>
+            <div class="field-box">
+              <label for="text" class="sr">{{fieldLabel}}</label>
+              <input id="text" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="done" placeholder="{{placeholder}}" />
+              <button type="button" class="paste" id="paste" hidden>{{paste}}</button>
+              <svg class="legs" viewBox="0 0 60 22" aria-hidden="true"><path d="M18 0V14M18 14L11 19M18 14V20M18 14L25 19M42 0V14M42 14L35 19M42 14V20M42 14L49 19" /></svg>
+            </div>
+          </div>
+
+          <div class="says">
+            <p id="inside" hidden></p>
+            <div id="advice" aria-live="polite"></div>
+          </div>
+        </section>
+
+        <section class="sheet" aria-label="{{yourCode}}">
+          <div class="sticker" id="sticker">
+            <svg class="empty" id="empty" viewBox="0 0 33 33" aria-hidden="true"><path d="M4 4h7v7h-7z M5 5v5h5v-5z M6 6h3v3h-3z M22 4h7v7h-7z M23 5v5h5v-5z M24 6h3v3h-3z M4 22h7v7h-7z M5 23v5h5v-5z M6 24h3v3h-3z" /></svg>
+            <span class="peel" aria-hidden="true"></span>
+          </div>
+
+          <div class="status" id="status" aria-live="polite"></div>
+
+          <div class="actions">
+            <button type="button" class="take download" id="png" disabled>{{downloadPng}}</button>
+            <button type="button" class="take download" id="svg" disabled>{{downloadSvg}}</button>
+            <button type="button" class="take" id="copy" disabled hidden>{{copy}}</button>
+            <button type="button" class="take" id="share" disabled hidden>{{share}}</button>
+          </div>
+          <p class="which">{{which}}</p>
+          <p class="smallest" id="smallest" hidden></p>
+
+          <button type="button" class="more" id="sheet-more" aria-expanded="false" aria-controls="sheet-options">{{printSheet}}</button>
+          <div class="options sheet-options" id="sheet-options" hidden>
+            <fieldset class="layouts">
+              <legend>{{howMany}}</legend>
+              <div class="tiles">
+                <label class="tile"><input type="radio" name="layout" value="1" /><svg viewBox="0 0 21 29.7" aria-hidden="true"><rect class="paper" x="0.5" y="0.5" width="20" height="28.7" rx="1" /><rect x="2.00" y="2.00" width="17.00" height="17.00" /></svg><b>1</b><span class="tile-size" aria-hidden="true"></span></label>
+                <label class="tile"><input type="radio" name="layout" value="4" /><svg viewBox="0 0 21 29.7" aria-hidden="true"><rect class="paper" x="0.5" y="0.5" width="20" height="28.7" rx="1" /><rect x="2.00" y="2.00" width="8.00" height="8.00" /><rect x="11.00" y="2.00" width="8.00" height="8.00" /><rect x="2.00" y="11.00" width="8.00" height="8.00" /><rect x="11.00" y="11.00" width="8.00" height="8.00" /></svg><b>4</b><span class="tile-size" aria-hidden="true"></span></label>
+                <label class="tile"><input type="radio" name="layout" value="12" checked /><svg viewBox="0 0 21 29.7" aria-hidden="true"><rect class="paper" x="0.5" y="0.5" width="20" height="28.7" rx="1" /><rect x="2.00" y="2.00" width="5.00" height="5.00" /><rect x="8.00" y="2.00" width="5.00" height="5.00" /><rect x="14.00" y="2.00" width="5.00" height="5.00" /><rect x="2.00" y="8.00" width="5.00" height="5.00" /><rect x="8.00" y="8.00" width="5.00" height="5.00" /><rect x="14.00" y="8.00" width="5.00" height="5.00" /><rect x="2.00" y="14.00" width="5.00" height="5.00" /><rect x="8.00" y="14.00" width="5.00" height="5.00" /><rect x="14.00" y="14.00" width="5.00" height="5.00" /><rect x="2.00" y="20.00" width="5.00" height="5.00" /><rect x="8.00" y="20.00" width="5.00" height="5.00" /><rect x="14.00" y="20.00" width="5.00" height="5.00" /></svg><b>12</b><span class="tile-size" aria-hidden="true"></span></label>
+                <label class="tile"><input type="radio" name="layout" value="30" /><svg viewBox="0 0 21 29.7" aria-hidden="true"><rect class="paper" x="0.5" y="0.5" width="20" height="28.7" rx="1" /><rect x="2.00" y="2.00" width="2.76" height="2.76" /><rect x="5.56" y="2.00" width="2.76" height="2.76" /><rect x="9.12" y="2.00" width="2.76" height="2.76" /><rect x="12.68" y="2.00" width="2.76" height="2.76" /><rect x="16.24" y="2.00" width="2.76" height="2.76" /><rect x="2.00" y="5.56" width="2.76" height="2.76" /><rect x="5.56" y="5.56" width="2.76" height="2.76" /><rect x="9.12" y="5.56" width="2.76" height="2.76" /><rect x="12.68" y="5.56" width="2.76" height="2.76" /><rect x="16.24" y="5.56" width="2.76" height="2.76" /><rect x="2.00" y="9.12" width="2.76" height="2.76" /><rect x="5.56" y="9.12" width="2.76" height="2.76" /><rect x="9.12" y="9.12" width="2.76" height="2.76" /><rect x="12.68" y="9.12" width="2.76" height="2.76" /><rect x="16.24" y="9.12" width="2.76" height="2.76" /><rect x="2.00" y="12.68" width="2.76" height="2.76" /><rect x="5.56" y="12.68" width="2.76" height="2.76" /><rect x="9.12" y="12.68" width="2.76" height="2.76" /><rect x="12.68" y="12.68" width="2.76" height="2.76" /><rect x="16.24" y="12.68" width="2.76" height="2.76" /><rect x="2.00" y="16.24" width="2.76" height="2.76" /><rect x="5.56" y="16.24" width="2.76" height="2.76" /><rect x="9.12" y="16.24" width="2.76" height="2.76" /><rect x="12.68" y="16.24" width="2.76" height="2.76" /><rect x="16.24" y="16.24" width="2.76" height="2.76" /><rect x="2.00" y="19.80" width="2.76" height="2.76" /><rect x="5.56" y="19.80" width="2.76" height="2.76" /><rect x="9.12" y="19.80" width="2.76" height="2.76" /><rect x="12.68" y="19.80" width="2.76" height="2.76" /><rect x="16.24" y="19.80" width="2.76" height="2.76" /></svg><b>30</b><span class="tile-size" aria-hidden="true"></span></label>
+              </div>
+              <button type="button" class="link own-size" id="own-size" aria-expanded="false" aria-controls="measure">{{ownSize}}</button>
+              <div class="measure" id="measure" role="group" aria-label="{{printSize}}" hidden>
+                <span class="end"></span><span class="line"></span>
+                <button type="button" class="step" id="smaller" aria-label="{{smaller}}">−</button>
+                <output class="size" id="measure-size" aria-live="polite"></output>
+                <button type="button" class="step" id="bigger" aria-label="{{bigger}}">+</button>
+                <span class="line"></span><span class="end"></span>
+              </div>
+              <div class="copies" id="copies" hidden>
+                <label class="copy-choice"><input type="radio" name="copies" value="fill" checked /><span>{{fillPage}}</span></label>
+                <label class="copy-choice"><input type="radio" name="copies" value="one" /><span>{{justOne}}</span></label>
+              </div>
+            </fieldset>
+            <label class="caption-field"><span>{{captionLabel}}</span><input id="caption" type="text" autocomplete="off" maxlength="60" placeholder="{{captionPlaceholder}}" /></label>
+            <p class="note" id="sheet-summary"></p>
+            <button type="button" class="take download" id="print">{{print}}</button>
+          </div>
+
+          <button type="button" class="more" id="more" aria-expanded="false" aria-controls="options">{{coloursAndImage}}</button>
+          <div class="options" id="options" hidden>
+            <fieldset id="fg">
+              <legend>{{legendCode}}</legend>
+              <div class="chips">
+                <button type="button" class="chip" data-colour="#1c2b25" aria-pressed="true"><span class="chip-fill"></span><span>{{ink}}</span></button>
+                <button type="button" class="chip" data-colour="#1f5c45" aria-pressed="false"><span class="chip-fill"></span><span>{{forest}}</span></button>
+                <button type="button" class="chip" data-colour="#1d3f8f" aria-pressed="false"><span class="chip-fill"></span><span>{{blue}}</span></button>
+                <button type="button" class="chip" data-colour="#6a2c70" aria-pressed="false"><span class="chip-fill"></span><span>{{plum}}</span></button>
+                <button type="button" class="chip" data-colour="#b9cbbf" aria-pressed="false"><span class="chip-fill"></span><span>{{pale}}</span></button>
+                <input id="fg-custom" class="sr chip-input" type="color" value="#1c2b25" />
+                <label for="fg-custom" class="chip custom"><span class="chip-fill rainbow"></span><span>{{custom}}</span></label>
+              </div>
+            </fieldset>
+            <fieldset id="bg">
+              <legend>{{legendBackground}}</legend>
+              <div class="chips">
+                <button type="button" class="chip" data-colour="#ffffff" aria-pressed="true"><span class="chip-fill"></span><span>{{white}}</span></button>
+                <button type="button" class="chip" data-colour="#eaf1ec" aria-pressed="false"><span class="chip-fill"></span><span>{{sage}}</span></button>
+                <button type="button" class="chip" data-colour="#fde8dc" aria-pressed="false"><span class="chip-fill"></span><span>{{peach}}</span></button>
+                <button type="button" class="chip" data-colour="transparent" aria-pressed="false"><span class="chip-fill see-through"></span><span>{{seeThrough}}</span></button>
+                <button type="button" class="chip" data-colour="#1c2b25" aria-pressed="false"><span class="chip-fill"></span><span>{{ink}}</span></button>
+                <input id="bg-custom" class="sr chip-input" type="color" value="#ffffff" />
+                <label for="bg-custom" class="chip custom"><span class="chip-fill rainbow"></span><span>{{custom}}</span></label>
+              </div>
+            </fieldset>
+            <fieldset id="image">
+              <legend>{{legendImage}}</legend>
+              <div class="chips">
+                <button type="button" class="chip" data-image="none" aria-pressed="true"><span class="chip-fill white"></span><span>{{none}}</span></button>
+                <button type="button" class="chip" data-image="robin" aria-pressed="false"><span class="chip-fill white"><img src="/assets/img/robin-qr.svg" alt="" width="400" height="440" /></span><span>{{robin}}</span></button>
+                <input id="own-image" class="sr chip-input" type="file" accept="image/*" />
+                <label for="own-image" class="chip custom" id="own-chip"><span class="chip-fill white" id="own-fill">+</span><span>{{yourOwn}}</span></label>
+              </div>
+            </fieldset>
+            <p class="note">{{imageNote}}</p>
+            <p class="note problem" id="image-problem" role="alert" hidden></p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="foot">
+        <p>{{family}} {{follows}} {{otherTools}}</p>
+      </footer>
+    </div>
+    <div class="print-sheet" id="print-sheet" aria-hidden="true"></div>
+  </body>
+</html>

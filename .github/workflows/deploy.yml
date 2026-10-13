@@ -1,0 +1,43 @@
+# Deploys QR to Cloudflare Workers, at qr.honestrobin.com: `wrangler deploy`, the version
+# tests/package-lock.json pins (the one the checks used), with a Cloudflare API token from the
+# repository's secrets.
+#   CLOUDFLARE_API_TOKEN   (from Cloudflare's "Edit Cloudflare Workers" token template)
+#   CLOUDFLARE_ACCOUNT_ID
+# It runs the checks first (checks.yml) and deploys only if they pass. Pull requests never run it.
+# For now it runs only when started by hand (Actions → Deploy → Run workflow): going live is a
+# release, and the maintainer says when. Once QR is live, it can run on every push to main, as
+# honestrobin.com's does.
+name: Deploy
+on:
+  workflow_dispatch:
+concurrency: deploy
+permissions:
+  contents: read
+jobs:
+  checks:
+    uses: ./.github/workflows/checks.yml
+    with:
+      outside-links: warn # a correction mustn't wait for someone else's renamed file
+  deploy:
+    needs: checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: tests/package-lock.json
+      - run: npm ci
+        working-directory: tests
+      - name: Deploy to Cloudflare
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          WRANGLER_SEND_METRICS: "false"
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::warning::No CLOUDFLARE_API_TOKEN secret yet, so nothing was deployed."
+            exit 0
+          fi
+          tests/node_modules/.bin/wrangler deploy

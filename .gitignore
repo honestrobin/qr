@@ -1,0 +1,6 @@
+node_modules
+.wrangler
+tests/test-results
+tests/playwright-report
+tests/screens
+*.whl
