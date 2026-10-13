@@ -1,5 +1,5 @@
 // QR in three browsers people actually use, served by wrangler (serve.js): the same server code
-// Cloudflare runs, so the 404 page, `_headers` and `.assetsignore` behave as they do on
+// Cloudflare runs, so the 404 page, `public/_headers` and `public/.assetsignore` behave as they do on
 // qr.honestrobin.com.
 import { defineConfig, devices } from "@playwright/test";
 

@@ -4,7 +4,7 @@
   "type": "module",
   "description": "The checks every change to QR runs before it merges and before it goes live. The page itself has no dependencies; only these checks do.",
   "scripts": {
-    "html": "html-validate --config htmlvalidate.json ../index.html ../404.html ../*/index.html",
+    "html": "html-validate --config htmlvalidate.json ../public/index.html ../public/404.html ../public/*/index.html",
     "test": "playwright test"
   },
   "devDependencies": {
