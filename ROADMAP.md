@@ -6,8 +6,7 @@ you'd notice is in [`CHANGELOG.md`](CHANGELOG.md) when it ships.
 
 ## Now
 
-The free tool, as it is, made a joy to use before anything is added to it. The maintainer uses it
-for real codes, and says when it's there.
+The free tool, as it is, made a joy to use before anything is added to it.
 
 ## Next
 
@@ -20,8 +19,10 @@ English first, then every language, checked back like the page's own words.
 **Codes you can change after printing, with scan counts.** A paid option, for anyone who needs a
 printed code to point somewhere new later. Such a code would go through an address instead of
 holding the link itself: your own address (one DNS record, no lock-in), a short link of ours, or
-the same software on your own server, free. Scan counts say how many, when and roughly where,
-never who. Leaving keeps every printed code working.
+the same software on your own server, free. Scan counts would say how many, when and roughly
+where, never who. Leaving would keep every printed code working: on your own address or your own
+server, whatever happens to us; on our short link, for as long as we run it, pointing where it last
+pointed.
 
 **One Honest Robin account for every tool.** The paid option would be its first use.
 

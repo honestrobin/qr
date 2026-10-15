@@ -59,7 +59,7 @@
     "formatQ": "PNG ili SVG?",
     "formatA": "Oba sadrže isti kôd. PNG radi u svakoj aplikaciji. SVG ostaje oštar u svakoj veličini, pa ga upotrijebi za sve što ispisuješ.",
     "changeQ": "Mogu li kasnije promijeniti poveznicu?",
-    "changeA": "Ne. Poveznica je dio koda, pa se ispisani kôd ne može promijeniti, a mi ga ne možemo isključiti. Ako ćeš možda morati promijeniti kamo vodi, usmjeri ga na stranicu na svom webu, pa mijenjaj tu stranicu. Plaćena opcija s kodovima koje možeš promijeniti i nakon ispisa, i s brojem skeniranja, [u našem je planu]. Besplatni alat ostaje kakav jest.",
+    "changeA": "Ne. Poveznica je dio koda, pa se ispisani kôd ne može promijeniti, a mi ga ne možemo isključiti. Ako ćeš možda morati promijeniti kamo vodi, usmjeri ga na stranicu na svom webu, pa mijenjaj tu stranicu. Plaćena opcija s kodovima koje možeš promijeniti i nakon ispisa, i s brojem skeniranja, [u našem je planu]. Besplatni alat ostaje besplatan, sa svime što ima.",
     "seeQ": "Vidite li što upisujem?",
     "seeA": "Ne. Tvoj kôd nastaje na tvom uređaju, a ništa od onoga što upišeš ne šalje se nikamo. Brojimo posjete i ono što se radi na stranici, primjerice koliko je kodova napravljeno, ali nikad što je u njima. [Izvorni kôd ove stranice] je javan, pa svatko može provjeriti.",
     "freeQ": "Kako to može biti besplatno?",

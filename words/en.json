@@ -59,7 +59,7 @@
     "formatQ": "PNG or SVG?",
     "formatA": "Both hold the same code. PNG works in every app. SVG stays sharp at any size, so use it for anything you print.",
     "changeQ": "Can I change the link later?",
-    "changeA": "No. The link is part of the code, so a printed code can’t change, and we can’t switch it off. If you may need to change where it leads, point it at a page on your own website, and change that page. A paid option with codes you can change after printing, and scan counts, is [on our roadmap]. The free tool stays as it is.",
+    "changeA": "No. The link is part of the code, so a printed code can’t change, and we can’t switch it off. If you may need to change where it leads, point it at a page on your own website, and change that page. A paid option with codes you can change after printing, and scan counts, is [on our roadmap]. The free tool stays free, with everything it has.",
     "seeQ": "Do you see what I type?",
     "seeA": "No. Your code is made on your own device, and nothing you type is sent anywhere. We count visits and what’s done on the page, such as how many codes are made, never what’s in them. [This page’s source code] is public, so anyone can check.",
     "freeQ": "How is it free?",

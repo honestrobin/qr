@@ -59,7 +59,7 @@
     "formatQ": "PNG oder SVG?",
     "formatA": "Beide enthalten denselben Code. PNG funktioniert in jeder App. SVG bleibt in jeder Größe scharf, nimm es also für alles, was du druckst.",
     "changeQ": "Kann ich den Link später ändern?",
-    "changeA": "Nein. Der Link ist Teil des Codes, also kann sich ein gedruckter Code nicht ändern, und wir können ihn nicht abschalten. Falls sich das Ziel später ändern könnte, lass ihn auf eine Seite deiner eigenen Website zeigen und ändere dann diese Seite. Eine bezahlte Option mit Codes, die du nach dem Drucken noch ändern kannst, und mit Scan-Zahlen steht [auf unserem Plan]. Das kostenlose Werkzeug bleibt, wie es ist.",
+    "changeA": "Nein. Der Link ist Teil des Codes, also kann sich ein gedruckter Code nicht ändern, und wir können ihn nicht abschalten. Falls sich das Ziel später ändern könnte, lass ihn auf eine Seite deiner eigenen Website zeigen und ändere dann diese Seite. Eine bezahlte Option mit Codes, die du nach dem Drucken noch ändern kannst, und mit Scan-Zahlen steht [auf unserer Roadmap]. Das kostenlose Werkzeug bleibt kostenlos, mit allem, was es hat.",
     "seeQ": "Seht ihr, was ich eingebe?",
     "seeA": "Nein. Dein Code entsteht auf deinem eigenen Gerät, und nichts, was du eingibst, wird irgendwohin gesendet. Wir zählen Besuche und was auf der Seite getan wird, etwa wie viele Codes erstellt werden, aber nie, was darin steht. [Der Quellcode dieser Seite] ist öffentlich, also kann das jeder nachprüfen.",
     "freeQ": "Warum ist das kostenlos?",
