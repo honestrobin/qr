@@ -3,7 +3,7 @@
   "alsoIn": "Diese Seite gibt es auch auf Deutsch.",
   "close": "Schließen",
   "page": {
-    "title": "QR-Code erstellen: kostenlos, dauerhaft, ohne Anmeldung · Honest Robin",
+    "title": "QR-Code erstellen: kostenlos, ohne Anmeldung, läuft nie ab · Honest Robin",
     "description": "QR-Code für Link oder Text erstellen. Kostenlos, ohne Anmeldung, läuft nie ab. Die Seite prüft, ob er sich scannen lässt und wie klein du ihn drucken kannst.",
     "headline": "Ein QR-Code zum Behalten.",
     "lede": "Komplett kostenlos: ohne Anmeldung. Der Code öffnet deinen Link direkt, nicht über uns, also funktioniert er, solange dein Link funktioniert. Was du eingibst, sehen wir nie.",
@@ -59,9 +59,9 @@
     "formatQ": "PNG oder SVG?",
     "formatA": "Beide enthalten denselben Code. PNG funktioniert in jeder App. SVG bleibt in jeder Größe scharf, nimm es also für alles, was du druckst.",
     "changeQ": "Kann ich den Link später ändern?",
-    "changeA": "Nein. Der Link ist Teil des Codes, also kann sich ein gedruckter Code nicht ändern, und niemand kann ihn abschalten. Falls sich das Ziel später ändern könnte, lass ihn auf eine Seite deiner eigenen Website zeigen und ändere dann diese Seite.",
+    "changeA": "Nein. Der Link ist Teil des Codes, also kann sich ein gedruckter Code nicht ändern, und wir können ihn nicht abschalten. Falls sich das Ziel später ändern könnte, lass ihn auf eine Seite deiner eigenen Website zeigen und ändere dann diese Seite.",
     "seeQ": "Seht ihr, was ich eingebe?",
-    "seeA": "Nein. Dein Code entsteht auf deinem eigenen Gerät, und was du eingibst, verlässt diese Seite nie. Wir zählen Besuche und was auf der Seite getan wird, etwa wie viele Codes erstellt werden, aber nie, was darin steht. [Der Quellcode dieser Seite] ist öffentlich, also kann das jeder nachprüfen.",
+    "seeA": "Nein. Dein Code entsteht auf deinem eigenen Gerät, und nichts, was du eingibst, wird irgendwohin gesendet. Wir zählen Besuche und was auf der Seite getan wird, etwa wie viele Codes erstellt werden, aber nie, was darin steht. [Der Quellcode dieser Seite] ist öffentlich, also kann das jeder nachprüfen.",
     "freeQ": "Warum ist das kostenlos?",
     "freeA": "Es kostet uns fast nichts: Dein Gerät erstellt den Code, nicht unsere Server. Und so lernen Leute Honest Robin kennen, das auch Software für die Arbeit macht.",
     "languageLabel": "Sprache"

@@ -125,7 +125,10 @@ hostname qr.honestrobin.com. The tests add the same tag to check what it sends.
 The page is plain files. Serve `public/` from the root of an address, with any web server, and
 it works the same; without `worker/`, its counts go nowhere. `public/_headers` is Cloudflare's format, so
 on another server, set the same headers yourself. To run it on your own Cloudflare account, put
-your address in `wrangler.jsonc` and run `npx wrangler deploy`.
+your address in `wrangler.jsonc` and run `npx wrangler deploy`. On your own address, also put it in
+`SITE` in `tools/pages.py` and run `python3 tools/pages.py` and `python3 tools/cards.py`: the
+addresses search engines read, and the preview picture a shared link shows, then point to your
+copy, not to ours.
 
 ## Contributing
 

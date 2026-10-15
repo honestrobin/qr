@@ -59,9 +59,9 @@
     "formatQ": "PNG atau SVG?",
     "formatA": "Keduanya berisi kode yang sama. PNG bisa dipakai di aplikasi apa pun. SVG tetap tajam di ukuran berapa pun, jadi pakailah untuk semua yang Anda cetak.",
     "changeQ": "Bisakah saya mengganti tautannya nanti?",
-    "changeA": "Tidak. Tautan adalah bagian dari kode, jadi kode yang sudah dicetak tidak bisa berubah, dan tidak ada yang bisa mematikannya. Jika nanti Anda mungkin perlu mengganti tujuannya, arahkan kode ke halaman di situs web Anda sendiri, lalu ubah halaman itu.",
+    "changeA": "Tidak. Tautan adalah bagian dari kode, jadi kode yang sudah dicetak tidak bisa berubah, dan kami tidak bisa mematikannya. Jika nanti Anda mungkin perlu mengganti tujuannya, arahkan kode ke halaman di situs web Anda sendiri, lalu ubah halaman itu.",
     "seeQ": "Apakah kalian melihat apa yang saya ketik?",
-    "seeA": "Tidak. Kode Anda dibuat di perangkat Anda sendiri, dan apa yang Anda ketik tidak pernah keluar dari halaman ini. Kami menghitung kunjungan dan apa yang dilakukan di halaman, misalnya berapa kode yang dibuat, tetapi tidak pernah isinya. [Kode sumber halaman ini] terbuka untuk umum, jadi siapa pun bisa memeriksanya.",
+    "seeA": "Tidak. Kode Anda dibuat di perangkat Anda sendiri, dan apa pun yang Anda ketik tidak dikirim ke mana pun. Kami menghitung kunjungan dan apa yang dilakukan di halaman, misalnya berapa kode yang dibuat, tetapi tidak pernah isinya. [Kode sumber halaman ini] terbuka untuk umum, jadi siapa pun bisa memeriksanya.",
     "freeQ": "Kenapa bisa gratis?",
     "freeA": "Biayanya hampir nol bagi kami: kode dibuat oleh perangkat Anda, bukan oleh server kami. Dan ini cara orang mengenal Honest Robin, yang juga membuat perangkat lunak untuk bekerja.",
     "languageLabel": "Bahasa"

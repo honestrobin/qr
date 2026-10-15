@@ -59,9 +59,9 @@
     "formatQ": "PNG ou SVG?",
     "formatA": "Os dois têm o mesmo código. O PNG funciona em qualquer aplicativo. O SVG fica nítido em qualquer tamanho, então use-o para tudo o que for imprimir.",
     "changeQ": "Posso mudar o link depois?",
-    "changeA": "Não. O link faz parte do código, então um código impresso não pode mudar, e ninguém pode desativá-lo. Se achar que um dia vai precisar mudar para onde ele leva, aponte-o para uma página do seu próprio site e mude essa página.",
+    "changeA": "Não. O link faz parte do código, então um código impresso não pode mudar, e nós não podemos desativá-lo. Se achar que um dia vai precisar mudar para onde ele leva, aponte-o para uma página do seu próprio site e mude essa página.",
     "seeQ": "Vocês veem o que eu digito?",
-    "seeA": "Não. O seu código é criado no seu próprio aparelho, e o que você digita nunca sai desta página. Contamos as visitas e o que é feito na página, como quantos códigos são criados, nunca o que há neles. [O código-fonte desta página] é público, então qualquer pessoa pode conferir.",
+    "seeA": "Não. O seu código é criado no seu próprio aparelho, e nada do que você digita é enviado para lugar nenhum. Contamos as visitas e o que é feito na página, como quantos códigos são criados, nunca o que há neles. [O código-fonte desta página] é público, então qualquer pessoa pode conferir.",
     "freeQ": "Como pode ser grátis?",
     "freeA": "Quase não nos custa nada mantê-lo: quem cria o código é o seu aparelho, não os nossos servidores. E é um jeito de as pessoas conhecerem a Honest Robin, que também faz software para o trabalho.",
     "languageLabel": "Idioma"

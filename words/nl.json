@@ -59,9 +59,9 @@
     "formatQ": "PNG of SVG?",
     "formatA": "Beide bevatten dezelfde code. PNG werkt in elke app. SVG blijft scherp op elk formaat, dus gebruik het voor alles wat je afdrukt.",
     "changeQ": "Kan ik de link later wijzigen?",
-    "changeA": "Nee. De link is onderdeel van de code, dus een afgedrukte code kan niet veranderen, en niemand kan hem uitzetten. Moet je misschien later wijzigen waar hij heen gaat, laat hem dan naar een pagina op je eigen website wijzen en pas die pagina aan.",
+    "changeA": "Nee. De link is onderdeel van de code, dus een afgedrukte code kan niet veranderen, en wij kunnen hem niet uitzetten. Moet je misschien later wijzigen waar hij heen gaat, laat hem dan naar een pagina op je eigen website wijzen en pas die pagina aan.",
     "seeQ": "Zien jullie wat ik typ?",
-    "seeA": "Nee. Je code wordt op je eigen apparaat gemaakt, en wat je typt verlaat deze pagina nooit. We tellen bezoeken en wat er op de pagina gebeurt, zoals hoeveel codes er worden gemaakt, maar nooit wat erin staat. [De broncode van deze pagina] is openbaar, dus iedereen kan het controleren.",
+    "seeA": "Nee. Je code wordt op je eigen apparaat gemaakt, en niets van wat je typt wordt ergens naartoe gestuurd. We tellen bezoeken en wat er op de pagina gebeurt, zoals hoeveel codes er worden gemaakt, maar nooit wat erin staat. [De broncode van deze pagina] is openbaar, dus iedereen kan het controleren.",
     "freeQ": "Hoe kan het gratis zijn?",
     "freeA": "Het kost ons bijna niets: je apparaat maakt de code, niet onze servers. En zo leren mensen Honest Robin kennen, dat ook software voor het werk maakt.",
     "languageLabel": "Taal"
