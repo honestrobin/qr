@@ -268,7 +268,7 @@ test("the robin says who it is and counts each code's squares, and stays", async
     });
   };
   const start = await at();
-  if ((await page.viewportSize()).width <= 960) {
+  if ((await page.viewportSize()).width <= 1004) {
     // On a narrow screen the code sits right under the field, and the robin stands under the code
     // it checked, so the code is in view while the keyboard is up.
     const stickerBottom = await page.locator("#sticker").evaluate((element) => Math.round(element.getBoundingClientRect().bottom + scrollY));
