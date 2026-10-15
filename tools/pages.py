@@ -32,6 +32,7 @@ LANGUAGES = ["en", "es", "pt", "fr", "de", "it", "nl", "pl", "hr", "tr", "id", "
 LINKS = {
     "follows": "https://honestrobin.com/code",
     "otherTools": "https://honestrobin.com/#products",
+    "seeA": "https://github.com/honestrobin/qr",
 }
 
 PLACEHOLDER = re.compile(r"\{[a-z]+\}")
@@ -46,6 +47,31 @@ def url(code):
 
 def path(code):
     return "/" if code == "en" else f"/{code}/"
+
+
+def card(code):
+    """The picture a link to the page shows in chats and on social media: tools/cards.py draws it."""
+    return f"{SITE}/assets/cards/{code}.png"
+
+
+def structured(code, words):
+    """What search engines read about the page: a free web app, in this language."""
+    data = {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Honest Robin QR",
+        "url": url(code),
+        "inLanguage": code,
+        "description": words["page"]["description"],
+        "image": card(code),
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": True,
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
+        "license": "https://www.gnu.org/licenses/agpl-3.0.html",
+        "publisher": {"@type": "Organization", "name": "Honest Robin", "url": "https://honestrobin.com"},
+    }
+    return json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
 
 
 def shape(value):
@@ -104,6 +130,8 @@ def page(template, code, words):
     values = {key: linked(key, value) for key, value in mine["page"].items()}
     values["lang"] = code
     values["url"] = url(code)
+    values["card"] = card(code)
+    values["structured"] = structured(code, mine)
     values["language"] = html.escape(mine["language"])
     values["alternates"] = "\n".join(
         [f'    <link rel="alternate" hreflang="{c}" href="{url(c)}" />' for c in LANGUAGES]

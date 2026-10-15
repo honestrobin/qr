@@ -8,9 +8,10 @@ are in `robinscode`; this adds what's particular to QR.
   `public/assets/qr.js` or `public/_headers`, or switching Cloudflare's counter for something else.
 - **Never change what someone typed.** Suggest the fix; only their tap applies it.
 - **Words live in `words/<language>.json`.** Edit `tools/page.html` and the words, then run
-  `python3 tools/pages.py`; never edit the pages in `public/` by hand. Everything in `public/` is served, so nothing else goes
-  there. A new or
-  changed English string needs every language, translated and checked back.
+  `python3 tools/pages.py`; never edit the pages in `public/` by hand. Everything in `public/` is
+  served, so nothing else goes there. A new or changed English string needs every language,
+  translated and checked back. After a headline changes, `python3 tools/cards.py` redraws the
+  preview cards.
 - **QR's words may play more than a work tool's.** People use it for a minute, and it isn't
   serious work, so the robin may lighten the moment more than it would in Time. Each line still
   says plainly what happens and stays professional. A translation carries the meaning and the

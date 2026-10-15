@@ -187,7 +187,7 @@ test.describe("the whole tool", () => {
 
   test("files that aren't part of the tool aren't served", async ({ request }) => {
     const notServed = [
-            "/README.md",
+      "/README.md",
       "/CONTRIBUTING.md",
       "/PROMISES.md",
       "/CHANGELOG.md",
@@ -203,7 +203,8 @@ test.describe("the whole tool", () => {
       "/docs/releases/1.0.0.md",
       "/tests/package.json",
       "/tests/playwright.config.js",
-            "/assets/vendor/README.md",
+      "/tools/cards.py",
+      "/assets/vendor/README.md",
       "/public/index.html",
     ];
     const served = [];
@@ -212,6 +213,67 @@ test.describe("the whole tool", () => {
       if (response.status() === 200) served.push(path);
     }
     expect(served).toEqual([]);
+  });
+
+  test("every language has its title, description, preview card, structured data and questions", async ({ page, request }) => {
+    for (const code of ["en", ...LANGUAGES]) {
+      const path = code === "en" ? "/" : `/${code}/`;
+      const address = `https://qr.honestrobin.com${path}`;
+      await page.goto(path);
+      const head = await page.evaluate(() => {
+        const meta = (selector) => document.querySelector(selector)?.getAttribute("content") ?? null;
+        return {
+          title: document.title,
+          description: meta('meta[name="description"]'),
+          ogTitle: meta('meta[property="og:title"]'),
+          ogDescription: meta('meta[property="og:description"]'),
+          ogUrl: meta('meta[property="og:url"]'),
+          ogImage: meta('meta[property="og:image"]'),
+          ogImageAlt: meta('meta[property="og:image:alt"]'),
+          twitterCard: meta('meta[name="twitter:card"]'),
+          structured: [...document.querySelectorAll('script[type="application/ld+json"]')].map((script) => script.textContent),
+          questions: [...document.querySelectorAll(".answer")].map((answer) => [
+            answer.querySelector("h3")?.textContent.trim() ?? "",
+            answer.querySelector("p")?.textContent.trim() ?? "",
+          ]),
+        };
+      });
+      expect(head.title, code).toMatch(/ · Honest Robin$/);
+      // Search engines cut a description at about 160 characters.
+      expect(head.description?.length ?? 0, code).toBeGreaterThan(40);
+      expect(head.description.length, code).toBeLessThanOrEqual(160);
+      expect([head.ogTitle, head.ogDescription, head.ogUrl], code).toEqual([head.title, head.description, address]);
+      expect(head.ogImage, code).toBe(`https://qr.honestrobin.com/assets/cards/${code}.png`);
+      expect(head.ogImageAlt, code).toBeTruthy();
+      expect(head.twitterCard, code).toBe("summary_large_image");
+
+      // The card is served, and is the size the tags say: a PNG's width and height are bytes 16 to 24.
+      const card = await request.get(new URL(head.ogImage).pathname);
+      expect(card.status(), code).toBe(200);
+      expect(card.headers()["content-type"], code).toBe("image/png");
+      const bytes = await card.body();
+      expect([bytes.readUInt32BE(16), bytes.readUInt32BE(20)], code).toEqual([1200, 630]);
+
+      expect(head.structured, code).toHaveLength(1);
+      const data = JSON.parse(head.structured[0]);
+      expect(data, code).toMatchObject({
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        name: "Honest Robin QR",
+        url: address,
+        inLanguage: code,
+        description: head.description,
+        image: head.ogImage,
+        isAccessibleForFree: true,
+        offers: { price: "0" },
+      });
+
+      expect(head.questions, code).toHaveLength(6);
+      for (const [question, answer] of head.questions) {
+        expect(question, code).toBeTruthy();
+        expect(answer, code).toBeTruthy();
+      }
+    }
   });
 
   test("every page is what tools/pages.py writes, with the same parts in every language", async ({ page }) => {

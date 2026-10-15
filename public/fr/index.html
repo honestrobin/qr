@@ -3,8 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>QR : un code QR qui reste à vous · Honest Robin</title>
-    <meta name="description" content="Créez un code QR pour un lien ou n’importe quel texte, vérifié avant l’impression. Gratuit pour de vrai : sans inscription. Le code ouvre votre lien directement, sans passer par nous, donc il fonctionne tant que votre lien fonctionne. Nous ne voyons jamais ce que vous tapez." />
+    <title>Générateur de QR code gratuit, sans limite de temps · Honest Robin</title>
+    <meta name="description" content="Créez un QR code pour un lien ou un texte. Gratuit, sans inscription, sans limite de temps. La page vérifie qu’il se scanne et donne sa taille minimale." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Honest Robin" />
+    <meta property="og:title" content="Générateur de QR code gratuit, sans limite de temps · Honest Robin" />
+    <meta property="og:description" content="Créez un QR code pour un lien ou un texte. Gratuit, sans inscription, sans limite de temps. La page vérifie qu’il se scanne et donne sa taille minimale." />
+    <meta property="og:url" content="https://qr.honestrobin.com/fr/" />
+    <meta property="og:image" content="https://qr.honestrobin.com/assets/cards/fr.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Un code QR sur un autocollant, avec les mots « Un code QR qui reste à vous. »" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#eaf1ec" />
     <link rel="canonical" href="https://qr.honestrobin.com/fr/" />
     <link rel="alternate" hreflang="en" href="https://qr.honestrobin.com/" />
@@ -26,18 +36,19 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preload" href="/assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" href="/assets/fonts/archivo-latin-ext-wdth-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/assets/qr.css?v=a7f312b429" />
+    <link rel="stylesheet" href="/assets/qr.css?v=450b567e74" />
     <script type="application/json" id="languages">{"page": "fr", "languages": [{"code": "en", "path": "/", "alsoIn": "This page is also in English.", "close": "Close"}, {"code": "es", "path": "/es/", "alsoIn": "Esta página también está en español.", "close": "Cerrar"}, {"code": "pt", "path": "/pt/", "alsoIn": "Esta página também está em português.", "close": "Fechar"}, {"code": "fr", "path": "/fr/", "alsoIn": "Cette page existe aussi en français.", "close": "Fermer"}, {"code": "de", "path": "/de/", "alsoIn": "Diese Seite gibt es auch auf Deutsch.", "close": "Schließen"}, {"code": "it", "path": "/it/", "alsoIn": "Questa pagina è disponibile anche in italiano.", "close": "Chiudi"}, {"code": "nl", "path": "/nl/", "alsoIn": "Deze pagina is er ook in het Nederlands.", "close": "Sluiten"}, {"code": "pl", "path": "/pl/", "alsoIn": "Ta strona jest też po polsku.", "close": "Zamknij"}, {"code": "hr", "path": "/hr/", "alsoIn": "Ova stranica postoji i na hrvatskom.", "close": "Zatvori"}, {"code": "tr", "path": "/tr/", "alsoIn": "Bu sayfa Türkçe olarak da var.", "close": "Kapat"}, {"code": "id", "path": "/id/", "alsoIn": "Halaman ini juga tersedia dalam bahasa Indonesia.", "close": "Tutup"}, {"code": "ja", "path": "/ja/", "alsoIn": "このページは日本語でもご覧いただけます。", "close": "閉じる"}, {"code": "ko", "path": "/ko/", "alsoIn": "이 페이지는 한국어로도 볼 수 있어요.", "close": "닫기"}]}</script>
     <script src="/assets/language.js?v=cb4aadb4a6"></script>
     <script src="/assets/vendor/qrcode.js?v=18ae399f81" defer></script>
     <script src="/assets/vendor/jsQR.js?v=bc40c8a151" defer></script>
     <script src="/assets/qr.js?v=0e3e85c0da" defer></script>
     <script type="application/json" id="words">{"lang": "fr", "opens": "Ce code ouvre {link}", "asText": "Les téléphones l’afficheront comme du texte.", "addHttps": "Les téléphones risquent de l’afficher comme du texte au lieu de l’ouvrir.", "addHttpsButton": "Ajouter https://", "spaces": "Il commence ou finit par un espace, donc les téléphones risquent de ne pas l’ouvrir.", "spacesButton": "Retirer les espaces", "tooLong": "Trop long pour un seul code : il fait {count} caractères, et un code en contient au plus {most} environ.", "tooLongWide": "Trop long pour un seul code. Un code contient environ {most} caractères simples, et moins quand des lettres comme é ou des emojis prennent plus de place.", "tooLongForImage": "Trop long pour un code avec image. Retirez l’image ou utilisez un lien plus court.", "removeImage": "Retirer l’image", "pasteRefused": "Ce navigateur n’a pas laissé la page lire ce que vous avez copié. Collez-le plutôt dans le champ.", "badImage": "Ce fichier n’est pas une image que ce navigateur puisse ouvrir.", "scans": "[Se scanne sans problème.]", "scansClear": "[Se scanne sans problème sur une surface claire.] Avec un fond transparent, laissez un peu d’espace autour.", "inverted": "Les téléphones récents le lisent. Certaines anciennes applis de scan, non.", "alike": "[Ne se scanne pas :] les couleurs se ressemblent trop.", "backToBlack": "Revenir au noir", "imageBreaks": "[Ne se scanne pas avec cette image.]", "unreadable": "[Ne se scanne pas.]", "size": "{cm} cm de large · {inches} pouces", "measure": "Au moins {cm} cm, pour que les téléphones le lisent", "sheet": "Chaque code fait {cm} cm de large, sur papier A4 ou Letter.", "sheetOwn": {"one": "1 code de {cm} cm de large sur une page", "other": "{count} codes de {cm} cm de large sur une page"}, "tileSize": "{cm} cm", "tooSmall": "Avec ceux en gris, le code serait imprimé trop petit pour être scanné.", "robin": "J’ai vérifié les {squares} carrés : les téléphones peuvent lire ce code.", "alt": "Code QR pour {what}", "copied": "Copié", "copyFailed": "Copie impossible", "placeholderShort": "Un lien ou du texte"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Honest Robin QR", "url": "https://qr.honestrobin.com/fr/", "inLanguage": "fr", "description": "Créez un QR code pour un lien ou un texte. Gratuit, sans inscription, sans limite de temps. La page vérifie qu’il se scanne et donne sa taille minimale.", "image": "https://qr.honestrobin.com/assets/cards/fr.png", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "license": "https://www.gnu.org/licenses/agpl-3.0.html", "publisher": {"@type": "Organization", "name": "Honest Robin", "url": "https://honestrobin.com"}}</script>
   </head>
   <body>
     <div class="page">
       <header class="masthead">
-        <span class="brand">Honest Robin <span class="badge">QR</span></span>
+        <span class="brand" lang="en">Honest Robin <span class="badge">QR</span></span>
         <div class="picker">
           <button type="button" class="tongue" id="language" aria-expanded="false" aria-controls="language-list">
             <span class="sr">Langue: </span><span>Français</span>
@@ -175,6 +186,18 @@
           </div>
         </section>
       </main>
+
+      <section class="questions" aria-labelledby="questions">
+        <h2 id="questions">Questions</h2>
+        <div class="answers">
+          <div class="answer"><h3>Le code expire-t-il ?</h3><p>Non. Le code contient votre lien tel quel et l’ouvre directement, sans passer par nous. Il fonctionne tant que votre lien fonctionne, et il ne dépend pas du tout de nous.</p></div>
+          <div class="answer"><h3>Quelle est la taille minimale pour l’imprimer ?</h3><p>Cela dépend du code. Un lien plus long donne un code avec plus de carrés, et chaque carré a besoin d’environ 0,6 mm pour qu’un téléphone le lise. Sous les boutons, la page indique la taille minimale de votre code. Elle n’est jamais inférieure à 2 cm.</p></div>
+          <div class="answer"><h3>PNG ou SVG ?</h3><p>Les deux contiennent le même code. Le PNG fonctionne dans toutes les applications. Le SVG reste net à toutes les tailles : utilisez-le pour tout ce que vous imprimez.</p></div>
+          <div class="answer"><h3>Puis-je changer le lien plus tard ?</h3><p>Non. Le lien fait partie du code : un code imprimé ne peut pas changer, et personne ne peut le désactiver. Si vous pensez devoir un jour changer sa destination, faites-le pointer vers une page de votre propre site, et modifiez cette page.</p></div>
+          <div class="answer"><h3>Voyez-vous ce que je tape ?</h3><p>Non. Votre code est créé sur votre propre appareil, et ce que vous tapez ne quitte jamais cette page. Nous comptons les visites et ce qui se fait sur la page, comme le nombre de codes créés, jamais leur contenu. <a href="https://github.com/honestrobin/qr">Le code source de cette page</a> est public : tout le monde peut vérifier.</p></div>
+          <div class="answer"><h3>Pourquoi est-ce gratuit ?</h3><p>Cela ne nous coûte presque rien : c’est votre appareil qui crée le code, pas nos serveurs. Et c’est une façon de découvrir Honest Robin, qui fait aussi des logiciels pour le travail.</p></div>
+        </div>
+      </section>
 
       <footer class="foot">
         <p>Fait partie de la famille Honest Robin. Chaque outil suit <a href="https://honestrobin.com/code">le Robin’s Code</a>. <a href="https://honestrobin.com/#products">Voir les autres outils</a></p>
