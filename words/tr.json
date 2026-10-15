@@ -59,7 +59,7 @@
     "formatQ": "PNG mi, SVG mi?",
     "formatA": "İkisi de aynı kodu taşır. PNG her uygulamada çalışır. SVG her boyutta net kalır, bu yüzden yazdıracağın her şey için onu kullan.",
     "changeQ": "Bağlantıyı sonra değiştirebilir miyim?",
-    "changeA": "Hayır. Bağlantı kodun bir parçasıdır, bu yüzden basılmış bir kod değişemez ve biz onu kapatamayız. Kodun gideceği yeri değiştirmen gerekebilirse, kodu kendi web sitendeki bir sayfaya yönlendir ve o sayfayı değiştir.",
+    "changeA": "Hayır. Bağlantı kodun bir parçasıdır, bu yüzden basılmış bir kod değişemez ve biz onu kapatamayız. Kodun gideceği yeri değiştirmen gerekebilirse, kodu kendi web sitendeki bir sayfaya yönlendir ve o sayfayı değiştir. Yazdırdıktan sonra değiştirebileceğin kodlar ve tarama sayıları, ücretli bir seçenek olarak [yol haritamızda] yer alıyor. Ücretsiz araç, sahip olduğu her şeyle birlikte ücretsiz kalıyor.",
     "seeQ": "Yazdıklarımı görüyor musunuz?",
     "seeA": "Hayır. Kod senin kendi cihazında oluşturulur ve yazdığın hiçbir şey hiçbir yere gönderilmez. Ziyaretleri ve sayfada yapılanları, örneğin kaç kod oluşturulduğunu sayarız; içlerinde ne olduğunu asla. [Bu sayfanın kaynak kodu] herkese açık, yani isteyen kontrol edebilir.",
     "freeQ": "Nasıl ücretsiz olabiliyor?",
