@@ -59,7 +59,7 @@
     "formatQ": "¿PNG o SVG?",
     "formatA": "Los dos llevan el mismo código. PNG funciona en cualquier aplicación. SVG se ve nítido a cualquier tamaño, así que úsalo para todo lo que imprimas.",
     "changeQ": "¿Puedo cambiar el enlace más adelante?",
-    "changeA": "No. El enlace forma parte del código, así que un código impreso no puede cambiar y nosotros no podemos desactivarlo. Si es posible que necesites cambiar adónde lleva, haz que apunte a una página de tu propio sitio web y cambia esa página.",
+    "changeA": "No. El enlace forma parte del código, así que un código impreso no puede cambiar y nosotros no podemos desactivarlo. Si es posible que necesites cambiar adónde lleva, haz que apunte a una página de tu propio sitio web y cambia esa página. Una opción de pago con códigos que puedes cambiar después de imprimirlos, y con recuento de escaneos, está [en nuestros planes]. La herramienta gratuita sigue siendo gratuita, con todo lo que tiene.",
     "seeQ": "¿Honest Robin ve lo que escribo?",
     "seeA": "No. Tu código se crea en tu propio dispositivo, y nada de lo que escribes se envía a ningún sitio. Contamos las visitas y lo que se hace en la página, como cuántos códigos se crean, nunca lo que contienen. [El código fuente de esta página] es público, así que cualquiera puede comprobarlo.",
     "freeQ": "¿Cómo puede ser gratis?",

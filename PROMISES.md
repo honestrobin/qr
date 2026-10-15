@@ -9,7 +9,7 @@ purpose.
 The statuses: **Tested**; **Built, no test** (the code does it, and nothing checks it); **Not
 built**; **By hand** (kept by how we work, not by code); **Doesn't apply**.
 
-Last checked: 2026-10-11, against the Robin's Code at robinscode ce0ee0a.
+Last checked: 2026-10-15, against the Robin's Code at robinscode 300a460.
 
 ## QR's own promises
 
@@ -19,7 +19,7 @@ Last checked: 2026-10-11, against the Robin's Code at robinscode ce0ee0a.
 | What you type is never changed for you: when something looks like a mistake, the page suggests the fix, and only your tap makes it. Until then the code holds exactly what you typed. | Tested | `tests/qr.spec.js::a link without https:// is offered the fix, and only the tap adds it`, `tests/qr.spec.js::spaces around a link are offered for removal, never removed by themselves` |
 | Checked before you print it: the page reads its own code back, the PNG you'd download, and says "Scans fine" only when it reads exactly what you typed; otherwise "Doesn't scan". It also says when colours are too alike for a phone, even if its reader manages. Its reader (jsQR) isn't a phone camera, so it also says how small you can print. | Tested | `tests/qr.spec.js::"Scans fine" only when the reader reads exactly what was typed`, `tests/qr.spec.js::a pasted link shows its code at once, says what it opens, and is checked`, `tests/qr.spec.js::colours too alike: says it won't scan, still downloads, and one tap goes back to black`, `tests/qr.spec.js::the robin in the middle: the code makes room, still scans, and every download carries it`, `tests/qr.spec.js::the PNG and the SVG carry 5 cm, more when a code needs it to scan, and the page says how small it can print` |
 | A mistake costs nothing: what you typed stays after every message, and a code that won't scan still downloads. | Tested | `tests/qr.spec.js::too long for one code: says how long, and what was typed stays`, `tests/qr.spec.js::colours too alike: says it won't scan, still downloads, and one tap goes back to black` |
-| Free: no account, trial, ads, watermark, expiry or upsell. | By hand | |
+| Free: no account, trial, ads, watermark, expiry or upsell. The page names the planned paid option once, in the answer to "Can I change the link later?", with nothing to buy and no button. | By hand | |
 
 ## Your data works for you
 
@@ -62,7 +62,8 @@ Last checked: 2026-10-11, against the Robin's Code at robinscode ce0ee0a.
 | Promise | Status | Guarded by |
 |---|---|---|
 | A feature you use is never removed without 90 days' notice, and changes to how you work are in a public, dated changelog, [`CHANGELOG.md`](CHANGELOG.md), before they ship. | By hand | |
-| Your price stays the same: QR is free, with no plan or subscription. | Doesn't apply | |
+| The free tool stays free and complete: nothing the page does today moves to the paid option on the roadmap. | By hand | `ROADMAP.md`, `CHANGELOG.md`, and the row above |
+| Your price stays the same: QR is free, with no plan or subscription, until the paid option on the roadmap exists. | Doesn't apply | |
 | Each version of the API keeps working for 12 months: QR has no API. | Doesn't apply | |
 
 ## No surprise bills
@@ -75,7 +76,7 @@ Last checked: 2026-10-11, against the Robin's Code at robinscode ce0ee0a.
 
 | Promise | Status | Guarded by |
 |---|---|---|
-| The self-hosted edition is the same software: there's one edition, these files. | Doesn't apply | |
+| The self-hosted edition is the same software: there's one edition, these files, until the paid option on the roadmap exists; its redirect software would be open source too. | Doesn't apply | |
 
 ## It's a joy to use
 
@@ -91,6 +92,7 @@ Last checked: 2026-10-11, against the Robin's Code at robinscode ce0ee0a.
 | Every page, in every language, links to the Robin's Code, which says how it's made, AI included. | Tested | `tests/languages.spec.js::page works in its own language` |
 | The page speaks your language without guessing from where you are: it reads your browser's language list and what you picked, never your IP address. | Tested | `tests/languages.spec.js::the plain address follows the browser's language`, `tests/languages.spec.js::an address with a language keeps it, and offers German in one line that can be closed` |
 | Every change says who or what wrote it, and every release has a record (`docs/releases/`). | By hand | |
+| Our plans are public: now, next and later, in order, without dates, in [`ROADMAP.md`](ROADMAP.md). No goals published yet, so the Code's "when a goal ends, we say how it went" has nothing to apply to. | By hand | |
 | Your customers get the same deal; we trust you; if we're sold or shut down: QR has no customers' customers, limits or cloud service. Its codes never touch us, so they keep working whatever happens to us. | Doesn't apply | |
 
 ## Where our words are ahead of the code
