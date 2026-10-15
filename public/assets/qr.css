@@ -489,6 +489,45 @@ a:focus-visible,
   gap: 18px;
   padding-top: 16px;
 }
+/* On a narrow screen the two columns stack. Then the code goes right under the field, so it's in
+   view while the keyboard is up; the robin and its line stand under the code it checked, and the
+   paragraph under the headline comes after them. Only the order changes: each part keeps its look. */
+@media (max-width: 960px) {
+  .desk {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 18px;
+  }
+  .make,
+  .sheet {
+    display: contents;
+  }
+  .make h1 { order: 1; }
+  .field { order: 2; }
+  .says { order: 3; }
+  .sticker { order: 4; }
+  .status { order: 5; }
+  .verdict { order: 6; }
+  .lede { order: 7; margin-bottom: 8px; }
+  .actions { order: 8; }
+  .which { order: 9; }
+  .smallest { order: 10; }
+  #sheet-more { order: 11; }
+  .sheet-options { order: 12; }
+  #more { order: 13; }
+  #options { order: 14; }
+  .sticker,
+  .status,
+  .actions,
+  .which,
+  .smallest,
+  .more,
+  .options {
+    align-self: center;
+  }
+}
+
 .sticker {
   position: relative;
   width: var(--sticker);

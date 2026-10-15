@@ -94,7 +94,7 @@ test("nothing typed: no message, the empty shape waits, and nothing can be taken
   await expect(page.locator("svg.code")).toHaveCount(0);
   await expect(status(page)).toBeEmpty();
   // The robin stays, and says who it is again.
-  await expect(page.locator("#bubble")).toHaveText("I’m the robin. I’m here to lighten up your day.");
+  await expect(page.locator("#bubble")).toHaveText("I’m the robin. I check every code before you print it.");
   for (const id of ["#png", "#svg"]) await expect(page.locator(id)).toBeDisabled();
 });
 
@@ -184,7 +184,7 @@ test("a see-through background: scans on a light surface, and the PNG is see-thr
     "Scans fine on a light surface. With a see-through background, leave some space around it.",
   );
   // Phones read it only on a light surface, so the robin doesn't say they can.
-  await expect(page.locator("#bubble")).toHaveText("I’m the robin. I’m here to lighten up your day.");
+  await expect(page.locator("#bubble")).toHaveText("I’m the robin. I check every code before you print it.");
   const read = await readEverything(page);
   expect([read.sticker, read.png, read.svg]).toEqual([LINK, LINK, LINK]);
   expect(pixel(read.pngBytes, 1, 1).rgba[3]).toBe(0);
@@ -255,7 +255,7 @@ test("the robin says who it is and counts each code's squares, and stays", async
   const bubble = page.locator("#bubble");
   // Before a code, the robin says who it is.
   await expect(robin).toBeVisible();
-  await expect(bubble).toHaveText("I’m the robin. I’m here to lighten up your day.");
+  await expect(bubble).toHaveText("I’m the robin. I check every code before you print it.");
   // It stands just above the field it lends its look to, and it stays there: a tap, a code, its
   // longer line and the check's answer move neither the robin nor the field under it.
   // Where they are on the page, not in the window: a tap on a phone scrolls the robin into view.
@@ -268,7 +268,14 @@ test("the robin says who it is and counts each code's squares, and stays", async
     });
   };
   const start = await at();
-  expect(start.bottom).toBeLessThan(start.field);
+  if ((await page.viewportSize()).width <= 960) {
+    // On a narrow screen the code sits right under the field, and the robin stands under the code
+    // it checked, so the code is in view while the keyboard is up.
+    const stickerBottom = await page.locator("#sticker").evaluate((element) => Math.round(element.getBoundingClientRect().bottom + scrollY));
+    expect(start.y).toBeGreaterThan(stickerBottom);
+  } else {
+    expect(start.bottom).toBeLessThan(start.field);
+  }
   await robin.click();
   await expect(bubble).toBeHidden();
   expect(await at()).toEqual(start);
@@ -280,7 +287,7 @@ test("the robin says who it is and counts each code's squares, and stays", async
     input.dispatchEvent(new Event("input", { bubbles: true }));
     return { line: document.getElementById("bubble").textContent, checked: "verdict" in document.getElementById("status").dataset };
   }, LINK);
-  expect(beforeTheCheck).toEqual({ line: "I’m the robin. I’m here to lighten up your day.", checked: false });
+  expect(beforeTheCheck).toEqual({ line: "I’m the robin. I check every code before you print it.", checked: false });
   // A version 2 code is 25 modules wide: 625 squares. The line follows without a tap.
   await expect(status(page)).toHaveText("Scans fine.");
   await expect(bubble).toHaveText("I checked all 625 squares: phones can read this code.");
@@ -317,7 +324,7 @@ test("the robin says who it is and counts each code's squares, and stays", async
   await expect(page.getByRole("button", { name: "Keep it plain" })).toHaveCount(0);
   await page.reload();
   await expect(robin).toBeVisible();
-  await expect(bubble).toHaveText("I’m the robin. I’m here to lighten up your day.");
+  await expect(bubble).toHaveText("I’m the robin. I check every code before you print it.");
 });
 
 test("the PNG and the SVG carry 5 cm, more when a code needs it to scan, and the page says how small it can print", async ({ page }) => {
