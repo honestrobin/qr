@@ -2,6 +2,14 @@
 
 What changed in QR that you'd notice, newest first, before it ships.
 
+## 1.9.0, 15 October 2026
+
+- On a phone, the code sits right under the field, so you see it appear while you type. The robin
+  and its line stand under the code, and the line under the headline moves below them. Nothing
+  changes on a wide screen.
+- The robin's first line says what it does: "I'm the robin. I check every code before you print
+  it." In every language.
+
 ## 1.8.0, 15 October 2026
 
 - Six questions, with short answers, under the tool in every language: does the code expire, how
