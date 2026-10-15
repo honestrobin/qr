@@ -16,6 +16,8 @@ reader and says whether it scans, and how small you can print it. Take it as PNG
   We make sure every code prints big enough for phones to read.
 - **Free**, with no account, ads, watermark or expiry. In 13 languages.
 
+What's planned, in order and without dates, is in [`ROADMAP.md`](ROADMAP.md).
+
 Made with AI: Claude, Anthropic's AI, wrote it. The maintainer, Marko Kruljac, gives the
 instructions, tests it and approves every release. Every promise it makes, and what guards it, is
 in [`PROMISES.md`](PROMISES.md). It follows the [Robin's Code](https://honestrobin.com/code).
