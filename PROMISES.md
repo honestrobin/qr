@@ -102,6 +102,10 @@ Last checked: 2026-10-11, against the Robin's Code at robinscode ce0ee0a.
   under the buttons ("At least … cm, so phones can read it"), and the robin's line doesn't repeat
   that limit. With an image, the squares under it are counted too; the
   code's error correction stands in for them.
+- The robin's first line, "I check every code before you print it", is true of Print, which sits
+  behind a button nobody reaches in the quarter second between the last keystroke and the check.
+  The PNG, SVG, Copy and Share buttons go live as soon as a code is drawn, so a file taken in that
+  quarter second is drawn fresh and hasn't been read back.
 
 
 

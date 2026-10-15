@@ -491,8 +491,10 @@ a:focus-visible,
 }
 /* On a narrow screen the two columns stack. Then the code goes right under the field, so it's in
    view while the keyboard is up; the robin and its line stand under the code it checked, and the
-   paragraph under the headline comes after them. Only the order changes: each part keeps its look. */
-@media (max-width: 960px) {
+   paragraph under the headline comes after them. Only the order changes: each part keeps its look.
+   Up to 1004 px the columns can't sit side by side (440 + 64 + 420 px in a desk 92% of the
+   viewport), so this covers every width where they stack. */
+@media (max-width: 1004px) {
   .desk {
     flex-direction: column;
     flex-wrap: nowrap;
