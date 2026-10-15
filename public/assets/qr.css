@@ -119,6 +119,7 @@ a:focus-visible,
 }
 .masthead,
 .desk,
+.questions,
 .foot {
   width: 100%;
   max-width: 1120px;
@@ -1029,6 +1030,54 @@ a:focus-visible,
     overflow-wrap: anywhere;
     color: #1c2b25;
   }
+}
+
+/* ---- Questions, under everything you use, behind a cut line like the sticker's ---- */
+.questions {
+  flex: 1;
+  padding-top: 30px;
+  border-top: 2px dashed var(--grid);
+}
+/* The questions follow the tool closely; the room left on a tall screen goes under them. */
+.desk:has(~ .questions) {
+  flex: none;
+}
+.questions h2 {
+  margin: 0 0 22px;
+  font-size: 32px;
+  line-height: 1.05;
+  font-weight: 800;
+  font-stretch: 78%;
+  letter-spacing: -0.01em;
+}
+.answers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 28px 48px;
+}
+.answer h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+/* A square from a code, before each question. */
+.answer h3::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 10px;
+  vertical-align: 0.12em;
+  background: var(--action);
+  border-radius: 1.5px;
+}
+.answer p {
+  margin: 0;
+  max-width: 36em;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
 }
 
 /* ---- The footer ---- */

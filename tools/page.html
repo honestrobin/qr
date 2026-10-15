@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{title}}</title>
     <meta name="description" content="{{description}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Honest Robin" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="og:url" content="{{url}}" />
+    <meta property="og:image" content="{{card}}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="{{cardAlt}}" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#eaf1ec" />
     <link rel="canonical" href="{{url}}" />
 {{alternates}}
@@ -20,11 +30,12 @@
     <script src="/assets/vendor/jsQR.js" defer></script>
     <script src="/assets/qr.js" defer></script>
     <script type="application/json" id="words">{{words}}</script>
+    <script type="application/ld+json">{{structured}}</script>
   </head>
   <body>
     <div class="page">
       <header class="masthead">
-        <span class="brand">Honest Robin <span class="badge">QR</span></span>
+        <span class="brand" lang="en">Honest Robin <span class="badge">QR</span></span>
         <div class="picker">
           <button type="button" class="tongue" id="language" aria-expanded="false" aria-controls="language-list">
             <span class="sr">{{languageLabel}}: </span><span>{{language}}</span>
@@ -150,6 +161,18 @@
           </div>
         </section>
       </main>
+
+      <section class="questions" aria-labelledby="questions">
+        <h2 id="questions">{{questions}}</h2>
+        <div class="answers">
+          <div class="answer"><h3>{{expiresQ}}</h3><p>{{expiresA}}</p></div>
+          <div class="answer"><h3>{{sizeQ}}</h3><p>{{sizeA}}</p></div>
+          <div class="answer"><h3>{{formatQ}}</h3><p>{{formatA}}</p></div>
+          <div class="answer"><h3>{{changeQ}}</h3><p>{{changeA}}</p></div>
+          <div class="answer"><h3>{{seeQ}}</h3><p>{{seeA}}</p></div>
+          <div class="answer"><h3>{{freeQ}}</h3><p>{{freeA}}</p></div>
+        </div>
+      </section>
 
       <footer class="foot">
         <p>{{family}} {{follows}} {{otherTools}}</p>

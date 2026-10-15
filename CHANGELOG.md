@@ -2,6 +2,16 @@
 
 What changed in QR that you'd notice, newest first, before it ships.
 
+## 1.8.0, 15 October 2026
+
+- Six questions, with short answers, under the tool in every language: does the code expire, how
+  small can I print it, PNG or SVG, can I change the link later, do you see what I type, and how
+  is it free. The answer about what you type links to the page's source code.
+- A link to QR shared in a chat or on social media shows a picture: the sticker, with a real code
+  for that language's page.
+- In search results, the page's title and description use the words people search with in each
+  language, such as "free QR code generator" or "QR-Code erstellen".
+
 ## 1.7.1, 12 October 2026
 
 - Each layout under Print a sheet shows its size under its picture ("12, 5 cm"), so you can pick by

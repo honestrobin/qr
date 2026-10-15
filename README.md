@@ -64,7 +64,8 @@ piece of server code that stores the counts.
 |---|---|
 | `tools/page.html` | The page, with a `{{key}}` for every word |
 | `words/<language>.json` | The words, one file per language, with the same keys as `en.json` |
-| `tools/pages.py` | Writes `public/index.html` (English), `public/<language>/index.html`, `sitemap.xml` and `robots.txt` from the two above, and stamps each stylesheet and script link (in `404.html` too) with its version. Run it after changing either; CI fails if a page is out of date |
+| `tools/pages.py` | Writes `public/index.html` (English), `public/<language>/index.html`, `sitemap.xml` and `robots.txt` from the two above, with what search engines and chats read (the preview card's tags and the structured data), and stamps each stylesheet and script link (in `404.html` too) with its version. Run it after changing either; CI fails if a page is out of date |
+| `tools/cards.py` | Draws the preview card a shared link shows, one per language (`public/assets/cards/`): the page's headline, and a code that opens that language's page, read back before it's kept. Run it after a headline changes; it needs Chromium |
 | `public/` | Everything that's served, and nothing else: the pages, `404.html`, `_headers`, the icons and `assets/` |
 | `public/assets/qr.js` | Makes the code, checks it, and hands it over |
 | `public/assets/language.js` | Picks the language: what you picked, else your browser's list, never your IP address |
@@ -124,7 +125,10 @@ hostname qr.honestrobin.com. The tests add the same tag to check what it sends.
 The page is plain files. Serve `public/` from the root of an address, with any web server, and
 it works the same; without `worker/`, its counts go nowhere. `public/_headers` is Cloudflare's format, so
 on another server, set the same headers yourself. To run it on your own Cloudflare account, put
-your address in `wrangler.jsonc` and run `npx wrangler deploy`.
+your address in `wrangler.jsonc` and run `npx wrangler deploy`. On your own address, also put it in
+`SITE` in `tools/pages.py` and run `python3 tools/pages.py` and `python3 tools/cards.py`: the
+addresses search engines read, and the preview picture a shared link shows, then point to your
+copy, not to ours.
 
 ## Contributing
 

@@ -20,11 +20,10 @@ Signed-off-by: Your Name <you@example.com>
 ## Changing the page
 
 - Everything in `public/` is served at qr.honestrobin.com, and nothing outside it is.
-
-
 - The page is `tools/page.html`, and its words are in `words/<language>.json`. After changing
   either, run `python3 tools/pages.py`. Never edit the pages in `public/` by hand: they're
-  written from those two.
+  written from those two. After a headline changes, also run `python3 tools/cards.py`, which
+  redraws the preview cards with Chromium.
 - A new or changed English line needs every language. If you can't translate it, say so in the
   pull request, and we will.
 - What's typed never leaves the page: no request may carry it, and it's never put in the address
