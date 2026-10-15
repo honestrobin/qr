@@ -59,7 +59,7 @@
     "formatQ": "PNG ou SVG ?",
     "formatA": "Les deux contiennent le même code. Le PNG fonctionne dans toutes les applications. Le SVG reste net à toutes les tailles : utilisez-le pour tout ce que vous imprimez.",
     "changeQ": "Puis-je changer le lien plus tard ?",
-    "changeA": "Non. Le lien fait partie du code : un code imprimé ne peut pas changer, et nous ne pouvons pas le désactiver. Si vous pensez devoir un jour changer sa destination, faites-le pointer vers une page de votre propre site, et modifiez cette page.",
+    "changeA": "Non. Le lien fait partie du code : un code imprimé ne peut pas changer, et nous ne pouvons pas le désactiver. Si vous pensez devoir un jour changer sa destination, faites-le pointer vers une page de votre propre site, et modifiez cette page. Une option payante, avec des codes que vous pouvez modifier après impression et un compteur de scans, est [dans nos projets]. L’outil gratuit reste tel qu’il est.",
     "seeQ": "Voyez-vous ce que je tape ?",
     "seeA": "Non. Votre code est créé sur votre propre appareil, et rien de ce que vous tapez n’est envoyé nulle part. Nous comptons les visites et ce qui se fait sur la page, comme le nombre de codes créés, jamais leur contenu. [Le code source de cette page] est public : tout le monde peut vérifier.",
     "freeQ": "Pourquoi est-ce gratuit ?",

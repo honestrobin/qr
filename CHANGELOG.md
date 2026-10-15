@@ -2,6 +2,12 @@
 
 What changed in QR that you'd notice, newest first, before it ships.
 
+## 1.9.1, 15 October 2026
+
+- The answer to "Can I change the link later?" says what's planned: a paid option with codes you
+  can change after printing, and scan counts, with a link to the new roadmap. The free tool stays
+  as it is. The roadmap (`ROADMAP.md`) lists what's now, next and later, in order, without dates.
+
 ## 1.9.0, 15 October 2026
 
 - On a phone, the code sits under the field, with only the line that says what it opens between

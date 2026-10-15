@@ -59,7 +59,7 @@
     "formatQ": "PNG o SVG?",
     "formatA": "Contengono lo stesso codice. Il PNG funziona in ogni app. L’SVG resta nitido a qualsiasi dimensione, quindi usalo per tutto ciò che stampi.",
     "changeQ": "Posso cambiare il link in seguito?",
-    "changeA": "No. Il link fa parte del codice, quindi un codice stampato non può cambiare e noi non possiamo disattivarlo. Se pensi di dover cambiare dove porta, fallo puntare a una pagina del tuo sito e cambia quella pagina.",
+    "changeA": "No. Il link fa parte del codice, quindi un codice stampato non può cambiare e noi non possiamo disattivarlo. Se pensi di dover cambiare dove porta, fallo puntare a una pagina del tuo sito e cambia quella pagina. Un’opzione a pagamento, con codici che puoi cambiare dopo la stampa e con il conteggio delle scansioni, è [nei nostri piani]. Lo strumento gratuito resta com’è.",
     "seeQ": "Vedete quello che scrivo?",
     "seeA": "No. Il codice viene creato sul tuo dispositivo, e niente di quello che scrivi viene inviato da nessuna parte. Contiamo le visite e quello che si fa sulla pagina, come quanti codici vengono creati, mai il loro contenuto. [Il codice sorgente di questa pagina] è pubblico, quindi chiunque può verificarlo.",
     "freeQ": "Come fa a essere gratis?",

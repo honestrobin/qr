@@ -59,7 +59,7 @@
     "formatQ": "PNG czy SVG?",
     "formatA": "Oba zawierają ten sam kod. PNG działa w każdej aplikacji. SVG pozostaje ostry w każdym rozmiarze, więc używaj go do wszystkiego, co drukujesz.",
     "changeQ": "Czy mogę później zmienić link?",
-    "changeA": "Nie. Link jest częścią kodu, więc wydrukowany kod nie może się zmienić, a my nie możemy go wyłączyć. Jeśli kiedyś zechcesz zmienić, dokąd prowadzi, skieruj go na stronę w swojej własnej witrynie i zmieniaj tę stronę.",
+    "changeA": "Nie. Link jest częścią kodu, więc wydrukowany kod nie może się zmienić, a my nie możemy go wyłączyć. Jeśli kiedyś zechcesz zmienić, dokąd prowadzi, skieruj go na stronę w swojej własnej witrynie i zmieniaj tę stronę. Płatna opcja z kodami, które możesz zmienić po wydrukowaniu, i z liczbą skanów jest [w naszych planach]. Bezpłatne narzędzie zostaje takie, jakie jest.",
     "seeQ": "Czy widzicie, co wpisuję?",
     "seeA": "Nie. Twój kod powstaje na twoim własnym urządzeniu, a nic z tego, co wpisujesz, nie jest nigdzie wysyłane. Liczymy odwiedziny i to, co dzieje się na stronie, na przykład ile kodów powstaje, ale nigdy to, co w nich jest. [Kod źródłowy tej strony] jest publiczny, więc każdy może to sprawdzić.",
     "freeQ": "Jak to może być za darmo?",

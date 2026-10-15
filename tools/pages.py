@@ -33,6 +33,7 @@ LINKS = {
     "follows": "https://honestrobin.com/code",
     "otherTools": "https://honestrobin.com/#products",
     "seeA": "https://github.com/honestrobin/qr",
+    "changeA": "https://github.com/honestrobin/qr/blob/main/ROADMAP.md",
 }
 
 PLACEHOLDER = re.compile(r"\{[a-z]+\}")
